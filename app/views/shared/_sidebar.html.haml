@@ -7,5 +7,6 @@
   %ul
     - Tag.all.each do |tag|
       %li.tag{id: "tag#{tag.id}"}
+        = "» " if tag.id == @tag.id
         = link_to(tag.name, notes_tag_path(tag))
   

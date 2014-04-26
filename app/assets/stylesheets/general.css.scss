@@ -1,5 +1,5 @@
 
-$sidebar_width: 200px;
+$sidebar_width: 250px;
 
 body {
   padding: 20px;
@@ -20,4 +20,7 @@ body {
   padding: 0;
   margin: 0;
   overflow: hidden;
+}
+form {
+  margin-bottom: 10px;
 }
