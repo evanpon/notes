@@ -1,0 +1,5 @@
+.note{class: note.tags_as_css_classes}
+  != CGI::escapeHTML(note.content).gsub(/\r\n/, '<br />')
+  .archive
+    = link_to(image_tag('x.png', height: 15), archive_note_path(note, {tag_id: note.tags.first.id}), method: :delete)
+.clear

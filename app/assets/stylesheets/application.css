@@ -14,7 +14,6 @@
  *= require_self
  */
 
-
-body {
-  padding: 20px;
+div.clear {
+  clear: both;
 }

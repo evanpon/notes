@@ -9,7 +9,11 @@ Rails.application.routes.draw do
       get 'notes'
     end
   end
-  resources :notes
+  resources :notes do 
+    member do
+      delete 'archive'
+    end
+  end
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

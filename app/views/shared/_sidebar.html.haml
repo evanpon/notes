@@ -1,0 +1,11 @@
+#sidebar
+  %ul
+    - Tag.all.each do |tag|
+      %li
+        = link_to(tag.name, notes_tag_path(tag))
+  - @tag = Tag.new
+  = form_for @tag do |f|
+    = f.label :name
+    = f.text_field :name
+    = f.submit 'Create'
+  

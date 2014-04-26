@@ -1,0 +1,15 @@
+
+$sidebar_width: 200px;
+
+body {
+  padding: 20px;
+  height: 100%;
+}
+
+#sidebar {
+  width: $sidebar_width;
+  float: left;
+}
+#content {
+  margin-left: $sidebar_width;
+}
