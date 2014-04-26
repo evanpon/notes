@@ -1,8 +1,8 @@
 - @note = Note.new
 = form_tag(notes_path) do |f|
-  = text_area 'note', :content
+  = text_area 'note', :content, tabindex: 1
   = hidden_field_tag :tag_id, @tag.id
   .hidden-submit
-    = submit_tag 'Create'
+    = submit_tag 'Create', tabindex: -1
 
 = render @tag.notes

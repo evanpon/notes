@@ -1,9 +1,9 @@
 #sidebar
   - @new_tag = Tag.new
   = form_for @new_tag do |f|
-    = f.text_field :name
+    = f.text_field :name, tabindex: 2
     .hidden-submit
-      = f.submit 'Create'
+      = f.submit 'Create', tabindex: -2
   %ul
     - Tag.all.each do |tag|
       %li.tag{id: "tag#{tag.id}"}
