@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :notes do 
     member do
       delete 'archive'
+      post 'tag'
     end
   end
   

@@ -55,9 +55,18 @@ class NotesController < ApplicationController
   end        
 
   def tag
+    @tag = Tag.find(params[:tag_id])
     @note = Note.find(params[:id])
+    if @note.tags.include?(@tag)
+      @note.tags.delete(@tag)
+    else
+      @note.tags << @tag
+    end
+    respond_to do |format|
+      format.json {render json: @note.tags.map(&:name)}
+    end
   end
-
+    
   private
   def note_params
     params.require(:note).permit(:content)

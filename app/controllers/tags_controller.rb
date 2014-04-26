@@ -51,10 +51,6 @@ class TagsController < ApplicationController
     end
   end        
 
-  def tag
-    @tag = tag.find(params[:id])
-  end
-
   private
   def tag_params
     params.require(:tag).permit(:name)

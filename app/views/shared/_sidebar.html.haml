@@ -1,7 +1,7 @@
 #sidebar
   %ul
     - Tag.all.each do |tag|
-      %li
+      %li.tag{id: "tag#{tag.id}"}
         = link_to(tag.name, notes_tag_path(tag))
   - @tag = Tag.new
   = form_for @tag do |f|

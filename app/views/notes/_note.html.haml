@@ -1,5 +1,7 @@
-.note{class: note.tags_as_css_classes}
+.note{class: note.tags_as_css_classes, id: "note#{note.id}"}
   != CGI::escapeHTML(note.content).gsub(/\r\n/, '<br />')
+  .tags
+    = note.tags.map(&:name).join(', ')
   .archive
     = link_to(image_tag('x.png', height: 15), archive_note_path(note, {tag_id: note.tags.first.id}), method: :delete)
 .clear
