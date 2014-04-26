@@ -22,11 +22,14 @@ jQuery ->
           alert textStatus
         success: (data, textStatus, jqXHR) ->
           note.find(".tags").html(data.join(', '))
-          
-      # request = $.ajax 
-      #   url: url
-      #   type: 'POST'
-      #   data: {tag_id: tagId}
-      # request.done
-      #   (data) -> $(this).find(".tags").html('worked')
+  
+  $('textarea').keypress (e) ->
+    if (e.ctrlKey && e.keyCode == 13) 
+      e.preventDefault()
+      $(this).closest('form').submit()
+      
+#     if (e.ctrlKey && e.keyCode == 13) {
+#         $(this).closest('form').find('input[type=submit][name=submit]').click();
+#     }
+# });
       
