@@ -1,13 +1,10 @@
 - @note = Note.new
-= form_tag(notes_path) do |f|
-  = text_area 'note', :content, tabindex: 1, placeholder: 'Add a note'
+#add_note
+  = form_tag(notes_path) do |f|
+    = text_area 'note', :content, tabindex: 1, placeholder: 'Add a note'
   
-  = hidden_field_tag :tag_id, @tag.id
-  .hidden-submit
-    = submit_tag 'Create', tabindex: -1
-
-.box.effect
-  %h3
-    This is the effect
+    = hidden_field_tag :tag_id, @tag.id
+    .hidden-submit
+      = submit_tag 'Create', tabindex: -1
 
 = render @tag.notes

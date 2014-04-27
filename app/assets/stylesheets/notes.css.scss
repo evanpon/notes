@@ -14,11 +14,18 @@ $note_width: 500px;
 
 textarea {
   height: 100px;
-  width: $note_width;
   border: 1px solid #cccccc;
   padding: 5px;
   resize: none;
   overflow: auto;
+}
+
+#add_note textarea {
+  width: $note_width;
+}
+
+.note textarea {
+  width: $note_width - 12;
 }
 
 input[type=text] {

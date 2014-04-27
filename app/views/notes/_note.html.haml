@@ -1,5 +1,5 @@
 .note{class: note.tags_as_css_classes, id: "note#{note.id}"}
-  != CGI::escapeHTML(note.content).gsub(/\r\n/, '<br />')
+  != best_in_place note, :content, :type => :textarea
   .data
     .tags
       = note.tags.map(&:name).join(', ')
