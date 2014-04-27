@@ -8,6 +8,7 @@ $note_width: 500px;
   border: 1px solid;
   width: $note_width;
   margin-bottom: 10px;
+  padding: 5px 5px 5px 5px;
 }
 
 textarea {
@@ -20,6 +21,7 @@ textarea {
   background-color: #ee5;
 }
 .note .data {
+  margin-top: 5px;
   position: relative;
 }
 .tags {
