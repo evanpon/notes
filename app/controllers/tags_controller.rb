@@ -1,9 +1,10 @@
 class TagsController < ApplicationController
 
-  def new
-    @tag = tag.new
+  def index
+    tag = Tag.first
+    redirect_to(notes_tag_path(tag))
   end
-  
+    
   def notes
     @tag = Tag.find(params[:id])
     @notes = @tag.notes
