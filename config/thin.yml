@@ -1,0 +1,14 @@
+--- 
+chdir: /fs/apps/notes/current
+environment: production
+timeout: 30
+log: log/thin.log
+pid: /fs/apps/notes/shared/pids/thin.pid
+max_conns: 1024
+max_persistent_conns: 512
+require: []
+
+wait: 30
+servers: 1
+socket: /fs/apps/notes/shared/sockets/thin.sock
+daemonize: false
