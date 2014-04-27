@@ -4,8 +4,18 @@
 
 jQuery ->
 
-  $(".best_in_place").best_in_place();
-  
+  # $(".best_in_place").best_in_place();
+  $(".note").click ->
+    $(this).find('.content').toggle()
+    $(this).find('form').toggle()
+    $(this).find('textarea').focus()
+    # textarea = "<textarea style='width: #{content.width() - 12}px; height: #{content.height()}px;'>"
+    # textarea += content.text()
+    # textarea += "</textarea>"
+    # content.html(textarea)
+    
+    
+    
   $(".tag").draggable
     revert: true
   $(".note").droppable

@@ -13,7 +13,6 @@ $note_width: 500px;
 }
 
 textarea {
-  height: 100px;
   border: 1px solid #cccccc;
   padding: 5px;
   resize: none;
@@ -22,10 +21,14 @@ textarea {
 
 #add_note textarea {
   width: $note_width;
+  height: 100px;
 }
 
 .note textarea {
   width: $note_width - 12;
+}
+.note form {
+  display: none;
 }
 
 input[type=text] {

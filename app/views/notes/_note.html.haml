@@ -1,5 +1,11 @@
 .note{class: note.tags_as_css_classes, id: "note#{note.id}"}
-  != best_in_place note, :content, :type => :textarea
+  .content
+    != for_display(note.content)
+  = form_for(note) do |f|
+    = f.text_area :content
+    = f.hidden_field :tag_id, {value: @tag.id}
+    .hidden-submit
+      = submit_tag 'Create', tabindex: -1
   .data
     .tags
       = note.tags.map(&:name).join(', ')

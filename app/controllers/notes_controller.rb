@@ -29,9 +29,11 @@ class NotesController < ApplicationController
   # PATCH/PUT /notes/1.json
   def update
     @note = Note.find(params[:id])
+    
+    @tag = Tag.find(params[:note].delete(:tag_id))
     respond_to do |format|
       if @note.update(note_params)
-        format.html { redirect_to @note, notice: 'note was successfully updated.' }
+        format.html { redirect_to notes_tag_path(@tag), notice: 'note was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
