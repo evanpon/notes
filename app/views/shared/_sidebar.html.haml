@@ -1,7 +1,7 @@
 #sidebar
   - @new_tag = Tag.new
   = form_for @new_tag do |f|
-    = f.text_field :name, tabindex: 2
+    = f.text_field :name, tabindex: 2, placeholder: 'Add a tag'
     .hidden-submit
       = f.submit 'Create', tabindex: -2
   %ul

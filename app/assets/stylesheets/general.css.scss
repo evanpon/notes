@@ -1,11 +1,12 @@
 
-$sidebar_width: 250px;
+$sidebar_width: 275px;
 $font-color: #424242;
 
 html, body {
   padding: 20px;
   height: 100%;
   font-family: 'Cousine', 'sans-serif';
+  font-size: 1.1em;
   color: $font-color;
   background-color: #f5f6f6;
 }
