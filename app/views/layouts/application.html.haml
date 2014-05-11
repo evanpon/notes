@@ -15,8 +15,34 @@
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
     = javascript_include_tag "application", 'data-turbolinks-track' => true 
 
-
+    / = javascript_include_tag "http://ajax.googleapis.com/jsapi"
+    / = javascript_include_tag "http://www.accountchooser.com/client.js"
+    / :javascript
+    /   function load() {
+    /     google.load("identitytoolkit", "2", {packages: ["ac"], language:"en", callback: callback});
+    /   }
+    /   function callback() {
+    /     window.google.identitytoolkit.setConfig({
+    /         developerKey: "667884590818-io5o4qehh9egttm09ti01fh97rr2k1l1.apps.googleusercontent.com",
+    /         companyName: "",
+    /         callbackUrl: "http://localhost:3000/callback",
+    /         realm: "",
+    /         userStatusUrl: "/userstatus",
+    /         loginUrl: "/login",
+    /         signupUrl: "/signup",
+    /         homeUrl: "/",
+    /         logoutUrl: "/signout",
+    /         idps: ["Gmail"],
+    /         tryFederatedFirst: true,
+    /         useContextParam: false,
+    /         language: "en"
+    /     });
+    /     window.google.identitytoolkit.init();
+    /   }
+    / = javascript_include_tag "http://apis.google.com/js/client.js?onload=load"
+      
   %body
-    = render(partial: 'shared/sidebar')
-    #content
-      = yield
+    #main
+      = render(partial: 'shared/sidebar')
+      #content
+        = yield

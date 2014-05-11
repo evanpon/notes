@@ -6,6 +6,10 @@ class TagsController < ApplicationController
   end
     
   def notes
+    # url = 'https://www.googleapis.com/identitytoolkit/v1/relyingparty/createAuthUrl'
+    # params = {identifier: 'evanpon@gmail.com', continueUrl: 'http://localhost:3000/continue'}
+    # response = RestClient.post(url)#, params
+    # puts response
     @tag = Tag.find(params[:id])
     @notes = @tag.notes
   end

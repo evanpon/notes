@@ -47,3 +47,4 @@ gem 'thin'
 # gem 'debugger', group: [:development, :test]
 
 gem 'best_in_place', github: 'aaronchi/best_in_place'
+gem 'rest-client'
