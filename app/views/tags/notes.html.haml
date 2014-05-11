@@ -1,10 +1,12 @@
-- @note = Note.new
-#add_note
-  = form_tag(notes_path) do |f|
-    = text_area 'note', :content, tabindex: 1, placeholder: 'Add a note'
+= render(partial: 'shared/sidebar')
+#content
+  - @note = Note.new
+  #add_note
+    = form_tag(notes_path) do |f|
+      = text_area 'note', :content, tabindex: 1, placeholder: 'Add a note'
   
-    = hidden_field_tag :tag_id, @tag.id
-    .hidden-submit
-      = submit_tag 'Create', tabindex: -1
+      = hidden_field_tag :tag_id, @tag.id
+      .hidden-submit
+        = submit_tag 'Create', tabindex: -1
 
-= render @tag.notes
+  = render @tag.notes

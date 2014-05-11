@@ -1,0 +1,5 @@
+#password
+  = form_tag(login_path, method: 'post') do
+    = password_field_tag :password 
+    .hidden-submit
+      = submit_tag 'Login', tabindex: -1

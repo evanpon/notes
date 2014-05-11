@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'tags#index'
+  get 'login' => 'login#index'
+  post 'login' => 'login#verify'
   
   resources :tags do
     member do

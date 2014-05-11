@@ -80,4 +80,5 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  SECURITY = YAML.load_file(Rails.root + '../shared/security.yml')
 end
