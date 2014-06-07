@@ -59,7 +59,7 @@ input[type=text] {
   border: 2px solid blue;
 }
 #trash {
-  background-image: url('empty_trash.png');
+  background-image: image-url('empty_trash.png');
   background-size: 100% 100%;
   height: $trash_size;
   width: $trash_size;
@@ -68,7 +68,7 @@ input[type=text] {
   left: 20px;
 }
 .full_trash {
-  background-image: url('full_trash.png') !important;
+  background-image: image-url('full_trash.png') !important;
   background-size: 100% 100%;
   height: $trash_size;
   width: $trash_size;
