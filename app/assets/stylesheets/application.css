@@ -18,3 +18,8 @@
 div.clear {
   clear: both;
 }
+#trash_can {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}

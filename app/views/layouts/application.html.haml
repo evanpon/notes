@@ -40,7 +40,8 @@
     /     window.google.identitytoolkit.init();
     /   }
     / = javascript_include_tag "http://apis.google.com/js/client.js?onload=load"
-      
   %body
-    #main
+    #main       
       = yield
+      #trash
+        -# = image_tag('trash4.png', height: 75)

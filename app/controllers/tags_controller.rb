@@ -2,6 +2,9 @@ class TagsController < ApplicationController
 
   def index
     tag = Tag.first
+    if tag.nil?
+      tag = Tag.create(name: 'Important')
+    end
     redirect_to(notes_tag_path(tag))
   end
     
@@ -43,14 +46,15 @@ class TagsController < ApplicationController
     end
   end
 
-  def archive
-    @tag = tag.find(params[:id])
+  def destroy
+    @tag = Tag.find(params[:id])
     respond_to do |format|
-      if @tag.update_attribute(:archived_at, Time.now)
-        format.html { redirect_to @tag, notice: 'tag was successfully updated.' }
+      if @tag.destroy
+        # Return a status 303 so it won't redirect with a DELETE verb
+        format.html { redirect_to '/', status: 303 }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { redirect_to @tag }
         format.json { render json: @tag.errors, status: :unprocessable_entity }
       end
     end

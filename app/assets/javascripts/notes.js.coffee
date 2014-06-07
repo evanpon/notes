@@ -14,15 +14,31 @@ jQuery ->
     # textarea += "</textarea>"
     # content.html(textarea)
     
-    
-    
+ 
   $(".tag").draggable
     revert: true
+    
+  $("#trash").droppable
+    drop: (event, ui) ->
+      tagId = ui.draggable.parent().attr('id').substr(3)
+      url = "/tags/" + tagId
+      hoverClass: "full_trash"
+      $.ajax
+        url: url
+        type: 'DELETE'
+        error: (jqXHR, textStatus, errorThrown) ->
+          alert textStatus
+        success: (data, textStatus, jqXHR) ->
+          $("#tag" + tagId).remove()
+          window.location.replace('/')
+      
+  $("#trash").droppable("option", "hoverClass", "full_trash")
+
   $(".note").droppable
     activeClass: "ui-state-default"
     hoverClass: "ui-state-hover"
     drop: (event, ui) ->
-      tagId = ui.draggable.attr('id').substr(3)
+      tagId = ui.draggable.parent().attr('id').substr(3)
       note = $(this)
       noteId = note.attr('id').substr(4)
       url = "/notes/" + noteId + "/tag"
